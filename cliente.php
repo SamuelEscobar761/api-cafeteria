@@ -5,16 +5,16 @@ require_once 'db_connection.php';
 $conn = conectarBaseDatos();
 
 // Obtener los datos de la solicitud
-// $codigo = $_POST["codigo"];
-// $correo = $_POST["correo"];
-// $passwd = $_POST["passwd"];
-$codigo = "56825";
-$correo = "samueb8@gmail.com";
-$passwd = "pbbs1959";
+$codigo = $_POST["codigo"];
+$correo = $_POST["correo"];
+$passwd = $_POST["passwd"];
+// $codigo = "56825";
+// $correo = "samueb8@gmail.com";
+// $passwd = "pbbs1959";
 
 
 // Consultar el cliente en la base de datos
-$sql = "SELECT * FROM cliente WHERE codigo = '$codigo' AND contrasena = '$passwd' AND correo = '$correo'";
+$sql = "SELECT * FROM cliente WHERE codigo = $codigo AND contrasena = '$passwd' AND correo = '$correo'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

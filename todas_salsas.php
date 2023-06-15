@@ -5,28 +5,21 @@ require_once 'db_connection.php';
 // Obtener la conexión a la base de datos
 $conn = conectarBaseDatos();
 
-$sql = "SELECT * FROM almuerzo";
+$sql = "SELECT * FROM salsa";
 $result = $conn->query($sql);
 
-$almuerzos = array();
+$salsas = array();
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $almuerzo = array(
+        $salsa = array(
             "id" => $row["id"],
             "nombre" => $row["nombre"],
             "disponible" => $row["disponible"],
-            "para_llevar" => $row["para_llevar"],
-            "descripcion" => $row["descripcion"],
-            "precio" => $row["precio"],
-            "imagen" => $row["imagen"],
-            "guarniciones" => $row["guarniciones"],
-            "ensaladas" => $row["ensaladas"],
-            "salsas" => $row["salsas"],
         );
-        $almuerzos[] = $almuerzo;
+        $salsas[] = $salsa;
     }
-    echo json_encode($almuerzos);
+    echo json_encode($salsas);
 } else {
     echo json_encode([]);
 }

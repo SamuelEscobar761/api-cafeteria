@@ -1,5 +1,4 @@
 <?php
-
 function conectarBaseDatos() {
     $conn = new mysqli("localhost", "cliente_cafeteria", "pbbs1959", "cafeteria");
 

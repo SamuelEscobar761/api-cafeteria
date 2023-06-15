@@ -1,7 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: http://localhost:5173");
-header("Access-Control-Allow-Headers: Content-Type");
-
+require_once 'header_admin.php';
 require_once 'db_connection.php';
 
 // Obtener la conexión a la base de datos

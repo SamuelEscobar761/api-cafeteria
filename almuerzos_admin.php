@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
         $almuerzo = array(
             "id" => $row["id"],
             "nombre" => $row["nombre"],
-            "disponible" => $row["disponible"],
+            "disponible" => (bool)$row["disponible"],
             "para_llevar" => $row["para_llevar"],
             "descripcion" => $row["descripcion"],
             "precio" => $row["precio"],

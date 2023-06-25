@@ -2,7 +2,7 @@
 require_once 'db_connection.php';
 
 // Obtener la conexión a la base de datos
-$conn = conectarBaseDatos();
+$conn = conectarBaseDatos("cliente_cafeteria", "cliente123");
 
 // Obtener los datos de la solicitud
 $id_almuerzo = $_POST["id_almuerzo"];

@@ -1,6 +1,6 @@
 <?php
-function conectarBaseDatos() {
-    $conn = new mysqli("localhost", "cliente_cafeteria", "pbbs1959", "cafeteria");
+function conectarBaseDatos($usuario, $contrasena) {
+    $conn = new mysqli("localhost", $usuario, $contrasena, "cafeteria");
 
     // Verificar si la conexión fue exitosa
     if ($conn->connect_error) {
@@ -9,4 +9,5 @@ function conectarBaseDatos() {
 
     return $conn;
 }
+
 ?>

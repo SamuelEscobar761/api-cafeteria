@@ -3,21 +3,21 @@ require_once 'header_admin.php';
 require_once 'db_connection.php';
 
 // Obtener la conexión a la base de datos
-$data = json_decode(file_get_contents('php://input'), true);
 $conn = conectarBaseDatos("admin_cafeteria", "admin123");
 
 // Obtener los datos de la solicitud
-$id = $data['id'];
+$id = $_POST["id"];
+$date = $_POST["date"];
 
 // Preparar la sentencia SQL
-$sql = "UPDATE almuerzo
-SET disponible = CASE WHEN disponible = 1 THEN 0 ELSE 1 END
-WHERE id = '$id';";
+$sql = "INSERT INTO almuerzo_fecha(id_almuerzo, fecha) VALUES ('$id', '$date')";
+echo $sql;
 
 // Ejecutar la consulta
 if ($conn->query($sql) === TRUE) {
-    echo "Almuerzo modificado correctamente";
+    echo "Datos insertados correctamente";
 } else {
+    echo $sql;
     echo "Error al insertar datos: " . $conn->error;
 }
 

@@ -4,7 +4,7 @@ require_once 'db_connection.php';
 
 // Obtener la conexión a la base de datos
 $data = json_decode(file_get_contents('php://input'), true);
-$conn = conectarBaseDatos();
+$conn = conectarBaseDatos("admin_cafeteria", "admin123");
 
 // Obtener los datos de la solicitud
 $nombre = $data['nombre'];

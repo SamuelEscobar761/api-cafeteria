@@ -2,7 +2,7 @@
     require_once 'db_connection.php';
 
     try {
-    $db = conectarBaseDatos();
+    $db = conectarBaseDatos("cliente_cafeteria", "cliente123");
     // Configura el modo de errores de PDO para mostrar excepciones
     echo "Conexion exitosa";
     } catch(PDOException $e) {

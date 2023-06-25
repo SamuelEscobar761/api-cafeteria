@@ -3,7 +3,7 @@ require_once 'header_admin.php';
 require_once 'db_connection.php';
 
 // Obtener la conexión a la base de datos
-$conn = conectarBaseDatos();
+$conn = conectarBaseDatos("admin_cafeteria", "admin123");
 
 $sql = "SELECT * FROM guarnicion";
 $result = $conn->query($sql);

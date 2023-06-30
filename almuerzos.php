@@ -8,7 +8,11 @@ $conn = conectarBaseDatos("cliente_cafeteria", "cliente123");
 $fecha = date("Y-m-d");
 
 
-$sql = "SELECT * FROM almuerzo RIGHT JOIN almuerzo_fecha ON almuerzo.id = almuerzo_fecha.id_almuerzo where almuerzo_fecha.fecha = '$fecha'  AND almuerzo.disponible = 1";
+$sql = "SELECT almuerzo.id, almuerzo.nombre, almuerzo.para_llevar, almuerzo.descripcion, almuerzo.precio, almuerzo.imagen, almuerzo.guarniciones, almuerzo.ensaladas, almuerzo.salsas
+FROM almuerzo
+RIGHT JOIN almuerzo_fecha ON almuerzo.id = almuerzo_fecha.id_almuerzo
+WHERE almuerzo_fecha.fecha = '$fecha' AND almuerzo.disponible = 1
+";
 $result = $conn->query($sql);
 
 $almuerzos = array();

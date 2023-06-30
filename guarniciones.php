@@ -9,7 +9,7 @@ $id_almuerzo = $_POST["id_almuerzo"];
 // $id_almuerzo = 1;
 
 
-$sql = "SELECT * FROM guarnicion RIGHT JOIN almuerzo_guarnicion ON guarnicion.id = almuerzo_guarnicion.id_guarnicion where almuerzo_guarnicion.id_almuerzo = '$id_almuerzo'  AND almuerzo_guarnicion.disponible = 1";
+$sql = "SELECT * FROM guarnicion";
 $result = $conn->query($sql);
 
 $guarniciones = array();

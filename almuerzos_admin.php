@@ -16,13 +16,13 @@ if ($result->num_rows > 0) {
             "id" => $row["id"],
             "nombre" => $row["nombre"],
             "disponible" => (bool)$row["disponible"],
-            "para_llevar" => $row["para_llevar"],
+            "para_llevar" => (bool)$row["para_llevar"],
             "descripcion" => $row["descripcion"],
             "precio" => $row["precio"],
             "imagen" => $row["imagen"],
-            "guarniciones" => $row["guarniciones"],
-            "ensaladas" => $row["ensaladas"],
-            "salsas" => $row["salsas"],
+            "numGuarniciones" => $row["guarniciones"],
+            "numEnsaladas" => $row["ensaladas"],
+            "numSalsas" => $row["salsas"],
         );
         $almuerzos[] = $almuerzo;
     }

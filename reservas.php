@@ -28,7 +28,6 @@ LEFT JOIN reserva_salsa AS rs ON r.id_reserva = rs.id_reserva
 LEFT JOIN salsa AS sa ON rs.id_salsa = sa.id
 GROUP BY r.id_reserva;";
 
-
 $result = $conn->query($sql);
 
 $reservas = array();
@@ -44,9 +43,9 @@ if ($result->num_rows > 0) {
             "correoCliente" => $row["correoCliente"],
             "almuerzoNombre" => $row["almuerzoNombre"],
             "entregado" => (bool)$row["entregado"],
-            "listaGuarniciones" => explode(",", $row["listaGuarniciones"]),
-            "listaEnsaladas" => explode(",", $row["listaEnsaladas"]),
-            "listaSalsas" => explode(",", $row["listaSalsas"]),
+            "listaGuarniciones" => $row["listaGuarniciones"] !== null ? explode(",", $row["listaGuarniciones"]) : [],
+            "listaEnsaladas" => $row["listaEnsaladas"] !== null ? explode(",", $row["listaEnsaladas"]) : [],
+            "listaSalsas" => $row["listaSalsas"] !== null ? explode(",", $row["listaSalsas"]) : [],
         );
         $reservas[] = $reserva;
     }

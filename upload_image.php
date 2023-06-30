@@ -1,7 +1,7 @@
 <?php
 require_once 'header_admin.php';
 // Directorio de destino
-$directorio = '../uploads_qr/';
+$directorio = '../uploads_images/';
 
 // Verificar si el directorio existe, si no, crearlo
 if (!is_dir($directorio)) {
